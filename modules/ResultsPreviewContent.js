@@ -273,7 +273,7 @@ export default React.createClass({
                 <div className="flexChild rowParent">
                     <TestResultContainer left={stableImagePath} right={testingImagePath} scrollEvent={this.handleScroll}/>                
                     <div className={`strange-panel ${this.state.testsTreeViewState} `}>
-                        {testData.map((data, i) => <a key={`${data.TestName} - ${data.Environment.Browser}|${data.Environment.WindowSize}`} href="#" onClick={this.handleTestItemClick} id={parseInt(i)} className={`${testItemSelectedClass(i)}`}>
+                        {(testData && testData[0].TestName !== "") && testData.map((data, i) => <a key={`${data.TestName} - ${data.Environment.Browser}|${data.Environment.WindowSize}`} href="#" onClick={this.handleTestItemClick} id={parseInt(i)} className={`${testItemSelectedClass(i)}`}>
                             <span>{(i+1)}</span>{data.TestName}</a>)}
                     </div>                    
                 </div>
@@ -293,7 +293,7 @@ export default React.createClass({
                     <div></div>
                     <a href="#" id="showDiff" className={diffClass} onClick={this.handleChildClick}><i id="showDiff" className={diffIconClass}></i></a>                    
                 </div>
-                 {(!this.state.testData || this.state.testData[0].TestName === "") && <div className="loader">
+                 {(!this.state.testData) && <div className="loader">
                     <div className="cssload-loader">
                         <div className="cssload-inner cssload-one"></div>
                         <div className="cssload-inner cssload-two"></div>
