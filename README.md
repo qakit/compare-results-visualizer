@@ -9,7 +9,7 @@ little UI page which helps to preview screenshots compare results
 
 You should see:
 
-![alt text](compare.png "Example of Preview")
+![alt text](http://github.com/qakit/compare-results-visualizer/blob/master/compare.PNG "Example of Preview")
 
 ## How it works
 To make it work for your tests prepare following json in tests
