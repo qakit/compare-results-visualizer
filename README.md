@@ -1,4 +1,4 @@
-# compare-results-visualizer
+# compare-results-visualizer [![Build Status](https://travis-ci.com/qakit/compare-results-visualizer.svg?branch=master)](https://travis-ci.com/qakit/compare-results-visualizer)
 little UI page which helps to preview screenshots compare results
 
 # Getting Started
