@@ -8,9 +8,9 @@ install:
 script:
   - yarn
   - yarn production
-  - zip -r ./compare-results-visualizer.0.1.${TRAVIS_BUILD_NUMBER}.zip ./images/* ./js/* ./index.html ./server.js
+  - zip -r ./compare-results-visualizer.0.1.$TRAVIS_BUILD_NUMBER.zip ./images/* ./js/* ./index.html ./server.js
 deploy:
   - provider: releases
-  - api_key: ${GITHUB_API_KEY}
-  - file: ./compare-results-visualizer.0.1.${TRAVIS_BUILD_NUMBER}.zip
+  - api_key: $GITHUB_API_KEY
+  - file: ./compare-results-visualizer.0.1.$TRAVIS_BUILD_NUMBER.zip
   - skip_cleanup: true
