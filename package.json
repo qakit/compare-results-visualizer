@@ -7,7 +7,7 @@
     "start": "webpack-dev-server --inline --hot --content-base .",
     "dev": "webpack --watch",
     "serve": "node ./server.js",
-    "production": "webpack --optimize-minimize"
+    "production": "webpack --mode=production"
   },
   "author": "Andrew Egorov",
   "dependencies": {

@@ -2,8 +2,8 @@ module.exports = {
   mode: process.env.NODE_ENV || 'development',
   entry: "./index.js",
   output: {
-    filename: "js/compare.results.visualizer.js",
-    publicPath: ""
+    filename: "compare.results.visualizer.js",
+    path: __dirname + "/js/"
   },
   module: {
     rules: [
