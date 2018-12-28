@@ -1,17 +1,20 @@
 module.exports = {
-  entry: './index.js',
-
+  mode: process.env.NODE_ENV || 'development',
+  entry: "./index.js",
   output: {
-    filename: 'js/compare.results.visualizer.js',
-    publicPath: ''
+    filename: "js/compare.results.visualizer.js",
+    publicPath: ""
   },
   module: {
-    loaders: [
-      { exclude: /node_modules/, loader: 'babel-loader?presets[]=es2015&presets[]=react' },
+    rules: [
+      {
+        exclude: /node_modules/,
+        loader: "babel-loader"
+      },
       {
         test: /\.scss$/,
-        loaders: ["style", "css", "sass"]
+        loaders: ["style-loader", "css-loader", "sass-loader"]
       }
     ]
   }
-}
+};
