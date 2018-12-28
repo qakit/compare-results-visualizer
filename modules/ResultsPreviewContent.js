@@ -25,8 +25,12 @@ var fakePreviewData = [{
 	}]
 }]
 
-export default React.createClass({
-    getCurrentImageName: function(artifact) {
+export default class ResultsPreviewContent extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = this.getInitialState();
+    }
+    getCurrentImageName(artifact) {
         if (artifact.TestingFile.Name !== "") {
             return artifact.TestingFile.Name;
         }
@@ -37,15 +41,15 @@ export default React.createClass({
             return artifact.DiffFile.Name;
         }
         return "";
-    },
-    componentDidMount: function() {
+    }
+    componentDidMount() {
         $(document.body).on('keydown', this.handleKeyDown);
         this.getData();
-    },
-    componenWillUnmount: function() {
+    }
+    componenWillUnmount() {
         $(document.body).off('keydown', this.handleKeyDown);
-    },
-    getData: function(testIndex, imageIndex) {
+    }
+    getData(testIndex, imageIndex) {
         var correctTestIndex = testIndex ? testIndex : 0;
         var correctImageIndex = imageIndex ? imageIndex : 0;
         var data = this.props.testData;
@@ -71,8 +75,8 @@ export default React.createClass({
             testIndex: correctTestIndex,
             imageIndex: correctImageIndex
         });
-    },
-    getInitialState: function() {
+    }
+    getInitialState() {
         var fakeData = fakePreviewData;
         
         var artifacts = fakeData[0].Artifacts;
@@ -96,8 +100,8 @@ export default React.createClass({
             testData: fakeData,
             testsTreeViewState: "collapsed"
         });
-    },
-    handleChildClick: function(event) {
+    }
+    handleChildClick(event) {
         var imageIndex = this.state.imageIndex;
         var showDiff = this.state.showDiff;
         var hasDiff = this.state.hasDiff;
@@ -163,16 +167,16 @@ export default React.createClass({
             imageName: currentImageName,
             maxImages: maxImages
         })
-    },
-    handleScroll: function(e){
+    }
+    handleScroll(e){
         var current = e.target;
         var $other = current.id === "leftImage" ? $("#rightImage") : $("#leftImage");
         var other = $other[0];
 
         other.scrollTop = current.scrollTop;
         other.scrollLeft = current.scrollLeft;
-    },
-    handleKeyDown: function(event) {
+    }
+    handleKeyDown(event) {
         event.preventDefault();
         //rigth arrow
         if (event.keyCode === 39) {
@@ -199,16 +203,16 @@ export default React.createClass({
             this.handleChildClick("showDiff");
             return;
         }
-    },
-    handleTestItemClick: function(event){
+    }
+    handleTestItemClick(event){
         var parent = event.target.parentNode;
 
         this.setState({
             testIndex: parseInt(parent.id),
             imageIndex: 0
         });
-    },
-    render: function() {
+    }
+    render() {
         const {TestName: testName, Artifacts: artifacts} = this.state.testData[this.state.testIndex];
         const testingImage = this.state.showDiff ? artifacts[this.state.imageIndex].DiffFile : artifacts[this.state.imageIndex].TestingFile;
         const stableImage = artifacts[this.state.imageIndex].StableFile;
@@ -303,4 +307,4 @@ export default React.createClass({
             </div>
         );
     }
-});
+}

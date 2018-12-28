@@ -1,7 +1,7 @@
 import React from 'react'
 
-export default React.createClass({
-    render: function() {
+export default class TestResultContainer extends React.Component {
+    render() {
         var base64Matcher = new RegExp("^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})$");
         
         const leftImagePrefix = base64Matcher.test(this.props.left) ? "data:image/png;base64," : "";
@@ -18,4 +18,4 @@ export default React.createClass({
             </div>
         );
     }
-});
+}
