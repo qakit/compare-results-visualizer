@@ -101,7 +101,7 @@ export default class ResultsPreviewContent extends React.Component {
             testsTreeViewState: "collapsed"
         });
     }
-    handleChildClick(event) {
+    handleChildClick = (event) => {
         var imageIndex = this.state.imageIndex;
         var showDiff = this.state.showDiff;
         var hasDiff = this.state.hasDiff;
@@ -167,7 +167,7 @@ export default class ResultsPreviewContent extends React.Component {
             imageName: currentImageName,
             maxImages: maxImages
         })
-    }
+    };
     handleScroll(e){
         var current = e.target;
         var $other = current.id === "leftImage" ? $("#rightImage") : $("#leftImage");
@@ -176,7 +176,7 @@ export default class ResultsPreviewContent extends React.Component {
         other.scrollTop = current.scrollTop;
         other.scrollLeft = current.scrollLeft;
     }
-    handleKeyDown(event) {
+    handleKeyDown = (event) => {
         event.preventDefault();
         //rigth arrow
         if (event.keyCode === 39) {
@@ -203,15 +203,15 @@ export default class ResultsPreviewContent extends React.Component {
             this.handleChildClick("showDiff");
             return;
         }
-    }
-    handleTestItemClick(event){
+    };
+    handleTestItemClick = (event) => {
         var parent = event.target.parentNode;
 
         this.setState({
             testIndex: parseInt(parent.id),
             imageIndex: 0
         });
-    }
+    };
     render() {
         const {TestName: testName, Artifacts: artifacts} = this.state.testData[this.state.testIndex];
         const testingImage = this.state.showDiff ? artifacts[this.state.imageIndex].DiffFile : artifacts[this.state.imageIndex].TestingFile;

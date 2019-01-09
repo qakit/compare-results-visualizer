@@ -1,5 +1,9 @@
+const mode = process.env.NODE_ENV || 'development';
+const sourceMaps = mode === 'development';
+
 module.exports = {
-  mode: process.env.NODE_ENV || 'development',
+  mode,
+  devtool: sourceMaps ? 'source-map' : undefined,
   entry: "./index.js",
   output: {
     filename: "compare.results.visualizer.js",
@@ -9,7 +13,10 @@ module.exports = {
     rules: [
       {
         exclude: /node_modules/,
-        loader: "babel-loader"
+        loader: "babel-loader",
+        options: {
+          sourceMaps,
+        },
       },
       {
         test: /\.scss$/,
