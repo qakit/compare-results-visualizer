@@ -278,7 +278,8 @@ export default class ResultsPreviewContent extends React.Component {
                     <TestResultContainer left={stableImagePath} right={testingImagePath} scrollEvent={this.handleScroll}/>                
                     <div className={`strange-panel ${this.state.testsTreeViewState} `}>
                         {(testData && testData[0].TestName !== "") && testData.map((data, i) => <a key={`${data.TestName} - ${data.Environment.Browser}|${data.Environment.WindowSize}`} href="#" onClick={this.handleTestItemClick} id={parseInt(i)} className={`${testItemSelectedClass(i)}`}>
-                            <span>{(i+1)}</span>{data.TestName}</a>)}
+                            <span>{(i+1)}</span>
+                            <span>{data.TestName}</span></a>)}
                     </div>                    
                 </div>
                 <div className="control-panel">
