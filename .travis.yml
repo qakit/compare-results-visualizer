@@ -7,7 +7,7 @@ install:
   - yarn
 script:
   - yarn
-  - yarn production
+  - yarn prod
   - zip -r ./compare-results-visualizer.0.1.$TRAVIS_BUILD_NUMBER.zip ./images/* ./js/* ./index.html ./server.js
 deploy:
   provider: releases
