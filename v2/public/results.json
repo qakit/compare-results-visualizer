@@ -1,0 +1,71 @@
+[
+  {
+    "TestName": "Test1",
+    "Environment": {
+      "Browser": "chrome",
+      "WindowSize": "1296 * 1000"
+    },
+    "Artifacts": [
+      {
+        "StableFile": {
+          "Type": "image",
+          "Name": "page1.png",
+          "Value": "TestOutput\\Stable\\Test1\\page1.png"
+        },
+        "TestingFile": {
+          "Type": "image",
+          "Name": "page1.png",
+          "Value": "TestOutput\\Testing\\Test1\\page1.png"
+        },
+        "DiffFile": {
+          "Type": "image",
+          "Name": "page1_diff.png",
+          "Value": "TestOutput\\Testing\\Test1\\page1_diff.png"
+        }
+      },
+      {
+        "StableFile": {
+          "Type": "image",
+          "Name": "page2.png",
+          "Value": "TestOutput\\Stable\\Test1\\page2.png"
+        },
+        "TestingFile": {
+          "Type": "image",
+          "Name": "page2.png",
+          "Value": "TestOutput\\Testing\\Test1\\page2.png"
+        },
+        "DiffFile": {
+          "Type": "image",
+          "Name": "",
+          "Value": ""
+        }
+      }
+    ]
+  },
+  {
+    "TestName": "Test2",
+    "Environment": {
+      "Browser": "chrome",
+      "WindowSize": "1296 * 1000"
+    },
+    "Artifacts": [
+      {
+        "StableFile": {
+          "Type": "html",
+          "Name": "page1.html",
+          "Value": "TestOutput\\Stable\\Test2\\page1.html"
+        },
+        "TestingFile": {
+          "Type": "html",
+          "Name": "page1.html",
+          "Value": "TestOutput\\Testing\\Test2\\page1.html"
+        },
+        "DiffFile": {
+          "Type": "image",
+          "Name": "",
+          "Value": ""
+        }
+      }
+    ]
+  }
+]
