@@ -230,7 +230,6 @@ export default class ResultViewer extends React.Component<ResultViewerProps, Res
     };
 
     render(){
-        console.log(this.state)
         var testInfo = this.state.testInfo;
         var artifacts = this.state.testData[testInfo.TestIndex].Artifacts;
 
@@ -265,12 +264,12 @@ export default class ResultViewer extends React.Component<ResultViewerProps, Res
         const testItemSelectedClass = function(i: number){
             return testInfo.TestIndex === i && 'selected' || '';
         }
-        console.log(resultType)
+
         return(
             <div className="flexChild columnParent preview">
                 <Navbar testName={testInfo.TestName} handleChildClick={this.handleChildClick} ></Navbar>
                 <div className="flexChild rowParent">
-                    {(resultType === "image" || resultType === undefined) && <ImageResultPreviewContainer stableFile={stableResultFile} testingFile={testingResultFile} scrollEvent={this.handleScroll}/>}
+                    {(resultType === "image" || resultType === undefined || resultType === "") && <ImageResultPreviewContainer stableFile={stableResultFile} testingFile={testingResultFile} scrollEvent={this.handleScroll}/>}
                     {resultType === "html" && <HtmlResultPreviewContainer stableFile={stableResultFile} testingFile={testingResultFile} scrollEvent={this.handleScroll}/>}
 
                     <TreeViewPanel testData={testData} handleClick={this.handleTestItemClick} state={this.state.testsTreeViewState} testItemSelectedClass={testItemSelectedClass} ></TreeViewPanel>

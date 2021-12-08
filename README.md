@@ -3,9 +3,9 @@ little UI page which helps to preview screenshots compare results
 
 # Getting Started
 * call `yarn`
-* call `yarn dev` - to run webpack or `yarn production` in case if you need minimized bundle
-* call `yarn serve` to start simple server
-* navigate to http://localhost:8081/
+* call `yarn start` - to run webpack 
+* call `yarn build` - in case if you need create production bundle (result see in build folder)
+* navigate to http://localhost:4000/
 
 You should see:
 
@@ -24,15 +24,18 @@ To make it work for your tests prepare following json in tests
 	"Artifacts": [{
 		"StableFile": {
 			"Name": "",
-			"Value": ""
+			"Value": "",
+			"Type": "image"
 		},
 		"TestingFile": {
 			"Name": "",
-			"Value": ""
+			"Value": "",
+			"Type": "image"
 		},
 		"DiffFile": {
 			"Name": "",
-			"Value": ""
+			"Value": "",
+			"Type": "image"
 		}
 	}]
 }]

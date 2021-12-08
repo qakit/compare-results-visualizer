@@ -1,4 +1,4 @@
-import React, { UIEventHandler } from 'react';
+import React from 'react';
 
 type NavbarProps = {
     testName: string,
