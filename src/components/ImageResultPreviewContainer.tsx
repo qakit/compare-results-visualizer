@@ -1,6 +1,5 @@
-import { SSL_OP_NO_QUERY_MTU } from 'constants'
 import React, { UIEventHandler } from 'react'
-import { TestResultFileInfo } from './VisualiserApp'
+import { TestResultFileInfo } from '../Viewer'
 
 type ImageResultPreviewContainerProps = {
     stableFile: TestResultFileInfo,
@@ -21,11 +20,11 @@ export default class ImageResultPreviewContainer extends React.Component<ImageRe
 
         return(
             <div className="flexChild rowParent">
-                <div id="leftImage" onScroll={this.props.scrollEvent} className="flexChild">
-                    <img alt="Stable Result" src={`${stableImagePrefix}${this.props.stableFile.Value}`}/>
+                <div id="stableFile" onScroll={this.props.scrollEvent} className="flexChild">
+                    <img title="Stable Result" src={`${stableImagePrefix}${this.props.stableFile.Value}`}/>
                 </div>
-                <div id="rightImage" onScroll={this.props.scrollEvent} className="flexChild">
-                    <img alt="Testing Result" src={`${testingImagePrefix}${this.props.testingFile.Value}`} />
+                <div id="testingFile" onScroll={this.props.scrollEvent} className="flexChild">
+                    <img title="Testing Result" src={`${testingImagePrefix}${this.props.testingFile.Value}`} />
                 </div>
             </div>
         )

@@ -1,6 +1,5 @@
-import { stat } from 'fs';
 import React, { UIEventHandler } from 'react'
-import { TestResultFileInfo } from './VisualiserApp'
+import { TestResultFileInfo } from '../Viewer'
 
 type HtmlResultPreviewContainerProps = {
     stableFile: TestResultFileInfo,
@@ -17,7 +16,6 @@ type HtmlResultPreviewContainerState = {
 
 export default class HtmlResultPreviewContainer extends React.Component<HtmlResultPreviewContainerProps, HtmlResultPreviewContainerState>{
     constructor(props: HtmlResultPreviewContainerProps){
-        console.log('CTR of HTML');
         super(props);
         this.state = {
             stableFileContentValue: "",
