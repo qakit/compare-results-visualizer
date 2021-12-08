@@ -1,16 +1,15 @@
 {
-  "presets": [
-    [
+    "presets": [
       "@babel/preset-env",
-      {
-        "targets": {
-          "browsers": ["last 3 versions", "ie >= 11"]
-        }
-      }
+      "@babel/preset-react",
+      "@babel/preset-typescript"
     ],
-    "@babel/preset-react"
-  ],
-  "plugins": [
-    "@babel/plugin-proposal-class-properties"
-  ]
-}
+    "plugins": [
+      [
+        "@babel/plugin-transform-runtime",
+        {
+          "regenerator": true
+        }
+      ]
+    ]
+  }
