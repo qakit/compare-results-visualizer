@@ -59,9 +59,9 @@ export default class HtmlResultPreviewContainer extends React.Component<HtmlResu
     render(){
         return(
             <div className="flexChild rowParent">
-                <div id="leftImage" onScroll={this.props.scrollEvent} className="flexChild" dangerouslySetInnerHTML={{__html: this.state.stableFileContent }}>
+                <div id="stableFile" onScroll={this.props.scrollEvent} className="flexChild" dangerouslySetInnerHTML={{__html: this.state.stableFileContent }}>
                 </div>
-                <div id="rightImage" onScroll={this.props.scrollEvent} className="flexChild" dangerouslySetInnerHTML={{__html: this.state.testingFileContent }}>
+                <div id="testingFile" onScroll={this.props.scrollEvent} className="flexChild" dangerouslySetInnerHTML={{__html: this.state.testingFileContent }}>
                 </div>
             </div>
         )
