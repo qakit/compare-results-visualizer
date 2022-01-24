@@ -269,7 +269,7 @@ export default class ResultViewer extends React.Component<ResultViewerProps, Res
             <div className="flexChild columnParent preview">
                 <Navbar testName={testInfo.TestName} handleChildClick={this.handleChildClick} ></Navbar>
                 <div className="flexChild rowParent">
-                    {(resultType === "image" || resultType === undefined || resultType === "") && <ImageResultPreviewContainer stableFile={stableResultFile} testingFile={testingResultFile} scrollEvent={this.handleScroll}/>}
+                    {(resultType === "image" || resultType === undefined || resultType === "" || resultType === null) && <ImageResultPreviewContainer stableFile={stableResultFile} testingFile={testingResultFile} scrollEvent={this.handleScroll}/>}
                     {resultType === "html" && <HtmlResultPreviewContainer stableFile={stableResultFile} testingFile={testingResultFile} scrollEvent={this.handleScroll}/>}
 
                     <TreeViewPanel testData={testData} handleClick={this.handleTestItemClick} state={this.state.testsTreeViewState} testItemSelectedClass={testItemSelectedClass} ></TreeViewPanel>
